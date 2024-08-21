@@ -7,9 +7,7 @@ interface templateSlugProps {
 
 const TemplatePage = ({ params }: { params: templateSlugProps }) => {
   console.log(params)
-  const selectedTemplate = contentTemplates.find(
-    (item) => item.slug === params.templateSlug
-  );
+  const selectedTemplate = contentTemplates[3]
 
   return (
     <div className="mx-5 py-2">
