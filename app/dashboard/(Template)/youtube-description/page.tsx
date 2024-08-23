@@ -6,7 +6,7 @@ interface templateSlugProps {
 }
 
 const TemplatePage = ({ params }: { params: templateSlugProps }) => {
-  console.log(params)
+ 
   const selectedTemplate = contentTemplates[0]
 
   return (
