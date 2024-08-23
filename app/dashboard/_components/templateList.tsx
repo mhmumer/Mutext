@@ -11,6 +11,18 @@ const TemplateList = ({ searchInput }: { searchInput: string | undefined }) => {
   const searchParams = useSearchParams()
   const searchCategory = searchParams.get("category")
   
+   useEffect(() => {
+     if (searchCategory === "All") {
+       setTemplateList(contentTemplates);
+     } else if (searchCategory) {
+       const filteredTemplates = contentTemplates.filter(
+         (item) => item.category === searchCategory
+       );
+       setTemplateList(filteredTemplates);
+     } else {
+       setTemplateList(contentTemplates);
+     }
+   }, [searchCategory]);
 
   useEffect(() => {
     if (searchInput && searchInput.length > 2) {
@@ -27,7 +39,7 @@ const TemplateList = ({ searchInput }: { searchInput: string | undefined }) => {
       {templateList.map((template) => (
         <div key={template.slug}>
           <Link
-            href={`/dashboard/Template/${template.slug}`}
+            href={`/dashboard/${template.slug}`}
             className="bg-white w-full rounded-lg h-[200px] py-4 px-4 text-center  flex flex-col  justify-center"
           >
             <template.icon className="h-12 w-12 mx-auto" />

@@ -1,8 +1,14 @@
 "use client";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { CategoryProps } from "./categories";
+
 import { cn } from "@/lib/utils";
 import qs from "query-string";
+
+interface CategoryProps {
+  name: string;
+  value: string;
+  children?: React.ReactNode; // Add this line to include children
+}
 
 export const CategoryItem = ({ name, value }: CategoryProps) => {
   const pathname = usePathname();
@@ -38,4 +44,4 @@ export const CategoryItem = ({ name, value }: CategoryProps) => {
       {name}
     </button>
   );
-};
+}
