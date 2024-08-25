@@ -23,7 +23,7 @@ export default function Home() {
             <div className="items-center flex flex-col -mt-4 ">
               <Image src={Mutext} alt={""} className=" h-20 w-20 " />{" "}
               <h2 className="-mt-5 font-mono  font-bold text-lg tracking-widest">
-                Mutext
+                Mutext.
               </h2>
             </div>
             <span className="sr-only">Mutext</span>
